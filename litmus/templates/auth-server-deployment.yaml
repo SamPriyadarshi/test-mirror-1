@@ -62,6 +62,18 @@ spec:
             - configMapRef:
                 name: {{ include "litmus-portal.fullname" . }}-admin-config
           env:
+            {{- if .Values.dex.enabled }}
+            - name: DEX_ENABLED
+              value: true
+            - name: OIDC_ISSUER
+              value: http://{{ .Values.dex.nodeip }}:32000
+            - name: DEX_OAUTH_CALLBACK_URL
+              value: http://{{ .Values.dex.frontedUrl }}:9091/auth/dex/callback
+            - name: DEX_OAUTH_CLIENT_ID
+              value: LitmusPortalAuthBackend
+            - name: DEX_OAUTH_CLIENT_SECRET
+              value: ZXhhbXBsZS1hcHAtc2VjcmV0
+            {{- end }}
             - name: DB_PASSWORD
               {{- if .Values.mongodb.enabled }}      
               {{- if not .Values.mongodb.auth.existingSecret }}

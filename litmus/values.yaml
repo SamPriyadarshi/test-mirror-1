@@ -322,6 +322,13 @@ openshift:
     annotations: {}
     host: ""
 
+dex:
+  enabled: false
+  nodeip: "10.0.0.1"
+  clientid: ""
+  clientSecret: ""
+  redirectUri: "http://35.202.184.70:32000/callback" #node_ip
+  frontedUrl: "<frontend-url>"
 # -- Configure the Bitnami MongoDB subchart
 # see values at https://github.com/bitnami/charts/blob/master/bitnami/mongodb/values.yaml
 mongodb:
