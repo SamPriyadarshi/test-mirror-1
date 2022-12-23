@@ -64,11 +64,11 @@ spec:
           env:
             {{- if .Values.dex.enabled }}
             - name: DEX_ENABLED
-              value: true
+              value: "true"
             - name: OIDC_ISSUER
-              value: http://{{ .Values.dex.nodeip }}:32000
+              value: "http://{{ .Values.dex.nodeip }}:32000"
             - name: DEX_OAUTH_CALLBACK_URL
-              value: http://{{ .Values.dex.frontedUrl }}:9091/auth/dex/callback
+              value: "http://{{ .Values.dex.frontedUrl }}:9091/auth/dex/callback"
             - name: DEX_OAUTH_CLIENT_ID
               value: LitmusPortalAuthBackend
             - name: DEX_OAUTH_CLIENT_SECRET
