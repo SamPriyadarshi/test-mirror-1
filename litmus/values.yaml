@@ -323,7 +323,7 @@ openshift:
     host: ""
 
 dex:
-  enabled: true
+  enabled: false
   nodeip: "10.0.0.1"
   clientid: ""
   clientSecret: ""
