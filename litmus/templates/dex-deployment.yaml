@@ -20,7 +20,7 @@ data:
         redirectURIs:
           - '/auth/dex/callback'
           - 'http://localhost:8080/auth/dex/callback' # Included for local testing purposes
-          - 'http://{{ .Values.dex.frontedUrl }}:9091/auth/dex/callback'
+          - 'http://{{ .Values.dex.frontedUrl }}/auth/dex/callback'
         name: 'LitmusPortalAuthBackend'
         secret: ZXhhbXBsZS1hcHAtc2VjcmV0
 
