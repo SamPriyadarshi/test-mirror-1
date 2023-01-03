@@ -36,7 +36,7 @@ data:
           clientSecret: {{ .Values.dex.clientSecret }} # Add your GitHub Client Secret here
           redirectURI: {{ .Values.dex.redirectUri }}  # Replace your domain here
           orgs:
-          - name: { .Values.dex.org }
+          - name: { .Values.dex.githuborg }
 
 ---
 # ClusterRole for DexServer

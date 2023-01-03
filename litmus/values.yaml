@@ -329,7 +329,7 @@ dex:
   redirectUri: "http://<node-ip>/callback" #node_ip
   frontedUrl: "<frontend-url>"
   host: "<your dex url>" # dex host url
-  org: "<your Github org name>"
+  githuborg: "<your Github org name>"
   
 # -- Configure the Bitnami MongoDB subchart
 # see values at https://github.com/bitnami/charts/blob/master/bitnami/mongodb/values.yaml
