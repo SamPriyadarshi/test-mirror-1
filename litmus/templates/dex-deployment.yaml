@@ -119,13 +119,12 @@ metadata:
   name: litmusportal-dex-service
   namespace: litmus
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - name: dex-server
-      port: 80
+      port: 5556
       protocol: TCP
       targetPort: 5556
-      nodePort: 32000
   selector:
     component: litmusportal-dex-server
 {{- end }}
