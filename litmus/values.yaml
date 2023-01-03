@@ -327,8 +327,10 @@ dex:
   nodeip: "10.0.0.1"
   clientid: ""
   clientSecret: ""
-  redirectUri: "http://<node-ip>:32000/callback" #node_ip
+  redirectUri: "http://<node-ip>/callback" #node_ip
   frontedUrl: "<frontend-url>"
+  host: "" # dex host url
+  
 # -- Configure the Bitnami MongoDB subchart
 # see values at https://github.com/bitnami/charts/blob/master/bitnami/mongodb/values.yaml
 mongodb:

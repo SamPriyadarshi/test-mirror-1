@@ -55,6 +55,13 @@ spec:
             name: {{ $fullName }}-server-service
             port: 
               number: 9002
+      - path: /callback/(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service: 
+            name: litmusportal-dex-service
+            port: 
+              number: 5556
     {{- else if semverCompare "<1.19-0" .Capabilities.KubeVersion.GitVersion }}
       - path: {{ .Values.ingress.host.paths.frontend }}
         backend:
@@ -64,5 +71,24 @@ spec:
         backend: 
           serviceName: {{ $fullName }}-server-service
           servicePort: 9002
+      - path: /callback/(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service: 
+            name: litmusportal-dex-service
+            port: 
+              number: 5556
     {{- end }}
+  {{- if .Values.dex.enabled }}
+  - host: {{ .Values.dex.host | quote }}
+    http:
+      paths:
+      - backend:
+          service:
+            name: litmusportal-dex-service
+            port:
+              number: 5556
+        path: /(.*)
+        pathType: ImplementationSpecific
+  {{- end }}
 {{- end }}
