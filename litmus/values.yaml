@@ -324,12 +324,12 @@ openshift:
 
 dex:
   enabled: false
-  nodeip: "10.0.0.1"
-  clientid: ""
-  clientSecret: ""
+  clientid: "<github-client-id>"
+  clientSecret: "<github-client-secret>"
   redirectUri: "http://<node-ip>/callback" #node_ip
   frontedUrl: "<frontend-url>"
-  host: "" # dex host url
+  host: "<your dex url>" # dex host url
+  org: "<your org name>"
   
 # -- Configure the Bitnami MongoDB subchart
 # see values at https://github.com/bitnami/charts/blob/master/bitnami/mongodb/values.yaml

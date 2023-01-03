@@ -6,7 +6,7 @@ metadata:
   namespace: litmus
 data:
   config.yaml: |
-    issuer: http://{{ .Values.dex.nodeip }}
+    issuer: http://{{ .Values.dex.host }}
     storage:
       type: kubernetes
       config:

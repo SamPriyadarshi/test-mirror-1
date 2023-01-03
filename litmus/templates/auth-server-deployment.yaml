@@ -66,7 +66,7 @@ spec:
             - name: DEX_ENABLED
               value: "true"
             - name: OIDC_ISSUER
-              value: "http://{{ .Values.dex.nodeip }}"
+              value: "http://{{ .Values.dex.host }}"
             - name: DEX_OAUTH_CALLBACK_URL
               value: "http://{{ .Values.dex.frontedUrl }}/auth/dex/callback"
             - name: DEX_OAUTH_CLIENT_ID
