@@ -8,9 +8,13 @@ kind: ChaosExperiment
 metadata:
   name: pod-network-duplication
   labels:
+<<<<<<< HEAD
     instance: {{ .Release.Name }}
     chart: {{ include "kubernetes-chaos.chart" . }}
     litmuschaos.io/version: {{ .Chart.AppVersion }}
+=======
+    {{- include "kubernetes-chaos.labels" . | indent 4 }}
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 spec:
   definition:
     scope: Namespaced
@@ -114,4 +118,8 @@ spec:
     labels:
       name: pod-network-duplication
       app.kubernetes.io/part-of: litmus
+<<<<<<< HEAD
+=======
+      app.kubernetes.io/runtime-api-usage: "true"
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 {{ end }}

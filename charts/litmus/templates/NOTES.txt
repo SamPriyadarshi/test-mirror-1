@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Additional Steps (Verification)
 ----------------------------------
 You can run the following commands if you wish to verify if all desired components are installed successfully.
@@ -19,3 +20,10 @@ litmus-7d998b6568-nnlcd   1/1     Running   0          106s
 ----------------------------------
 With this, you are good to go!! Refer to the chaos experiment documentation @ https://docs.litmuschaos.io 
 to start executing your first experiment.
+=======
+Thank you for installing {{ .Chart.Name }} 😀
+
+Your release is named {{ .Release.Name }} and it's installed to namespace: {{ .Release.Namespace }}.
+
+Visit https://docs.litmuschaos.io to find more info.
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3

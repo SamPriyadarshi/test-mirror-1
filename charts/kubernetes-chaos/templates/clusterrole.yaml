@@ -3,15 +3,24 @@ kind: ClusterRole
 metadata:
   name: {{ include "kubernetes-chaos.name" . }}-chaos-admin
   labels:
+<<<<<<< HEAD
     instance: {{ .Release.Name }}
     chart: {{ include "kubernetes-chaos.chart" . }}
     litmuschaos.io/version: {{ .Chart.AppVersion }}
+=======
+    {{- include "kubernetes-chaos.labels" . | indent 4 }}
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 rules:
 - apiGroups:
   - ""
   - "apps"
   - "batch"
   - "extensions"
+<<<<<<< HEAD
+=======
+  - "apps.openshift.io"
+  - "argoproj.io"
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
   - "litmuschaos.io"
   resources:
   - "jobs"
@@ -27,6 +36,13 @@ rules:
   - "events"
   - "configmaps"
   - "secrets"
+<<<<<<< HEAD
+=======
+  - "networkpolicies"
+  - "replicationcontrollers"
+  - "deploymentconfigs"
+  - "rollouts"
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
   - "chaosengines"
   - "chaosexperiments"
   - "chaosresults"

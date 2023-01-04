@@ -8,9 +8,13 @@ kind: ChaosExperiment
 metadata:
   name: pod-memory-hog
   labels:
+<<<<<<< HEAD
     instance: {{ .Release.Name }}
     chart: {{ include "kubernetes-chaos.chart" . }}
     litmuschaos.io/version: {{ .Chart.AppVersion }}
+=======
+    {{- include "kubernetes-chaos.labels" . | indent 4 }}
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 spec:
   definition:
     scope: Namespaced
@@ -92,10 +96,27 @@ spec:
     - name: SEQUENCE
       value: 'parallel'     
 
+<<<<<<< HEAD
     - name: SOCKET_PATH
       value: "{{ .Values.environment.socketPath }}" 
+=======
+    # provide the name of container runtime
+    # for litmus LIB, it supports docker, containerd, crio
+    # for pumba LIB, it supports docker only
+    - name: CONTAINER_RUNTIME
+      value: "{{ .Values.environment.runtime }}"
+    
+    # provide the container runtime socket path
+    # default set to std docker sock file path
+    - name: SOCKET_PATH
+      value: "{{ .Values.environment.socketPath }}"
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 
     labels:
       name: pod-memory-hog
       app.kubernetes.io/part-of: litmus
+<<<<<<< HEAD
+=======
+      app.kubernetes.io/runtime-api-usage: "true"
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 {{ end }}

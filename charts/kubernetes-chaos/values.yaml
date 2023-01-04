@@ -5,15 +5,29 @@
 nameOverride: "k8s"
 fullnameOverride: "k8s"
 
+<<<<<<< HEAD
 image:
   litmus:
     repository: litmuschaos/ansible-runner
     tag: 1.13.3
+=======
+# -- Additional labels
+customLabels: {}
+
+image:
+  litmus:
+    repository: litmuschaos/ansible-runner
+    tag: 2.14.0
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
     pullPolicy: Always
 
   litmusGO:
     repository: litmuschaos/go-runner
+<<<<<<< HEAD
     tag: 1.13.3
+=======
+    tag: 2.14.0
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
     pullPolicy: Always
 
   pumba:
@@ -21,7 +35,11 @@ image:
 
   litmusLIBImage:
     repository: litmuschaos/go-runner
+<<<<<<< HEAD
     tag: 1.13.3
+=======
+    tag: 2.14.0
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 
   networkChaos:
     tcImage: gaiadocker/iproute2

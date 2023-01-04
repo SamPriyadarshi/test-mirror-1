@@ -8,9 +8,13 @@ kind: ChaosExperiment
 metadata:
   name: pod-cpu-hog
   labels:
+<<<<<<< HEAD
     instance: {{ .Release.Name }}
     chart: {{ include "kubernetes-chaos.chart" . }}
     litmuschaos.io/version: {{ .Chart.AppVersion }}
+=======
+    {{- include "kubernetes-chaos.labels" . | indent 4 }}
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 spec:
   definition:
     scope: Namespaced
@@ -61,6 +65,12 @@ spec:
     - name: CPU_CORES
       value: '1'
 
+<<<<<<< HEAD
+=======
+    - name: CPU_LOAD
+      value: '100'
+
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
     # Percentage of total pods to target
     - name: PODS_AFFECTED_PERC
       value: ''
@@ -90,10 +100,25 @@ spec:
     - name: TARGET_PODS
       value: ''
 
+<<<<<<< HEAD
+=======
+    # provide the name of container runtime
+    # for litmus LIB, it supports docker, containerd, crio
+    # for pumba LIB, it supports docker only
+    - name: CONTAINER_RUNTIME
+      value: "{{ .Values.environment.runtime }}"
+    
+    # provide the container runtime socket path
+    # default set to std docker sock file path
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
     - name: SOCKET_PATH
       value: "{{ .Values.environment.socketPath }}"
             
     labels:
       name: pod-cpu-hog
       app.kubernetes.io/part-of: litmus
+<<<<<<< HEAD
+=======
+      app.kubernetes.io/runtime-api-usage: "true"
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 {{ end }}

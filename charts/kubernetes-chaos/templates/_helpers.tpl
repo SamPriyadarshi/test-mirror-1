@@ -30,3 +30,21 @@ Create chart name and version as used by the chart label.
 {{- define "kubernetes-chaos.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+<<<<<<< HEAD
+=======
+
+{{/* Generate basic labels */}}
+{{- define "kubernetes-chaos.labels" }}
+app.kubernetes.io/component: kubernetes-chaos
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+app.kubernetes.io/name: {{ template "kubernetes-chaos.fullname" . }}
+app.kubernetes.io/part-of: {{ template "kubernetes-chaos.fullname" . }} 
+app.kubernetes.io/version: "{{ .Chart.Version }}"
+helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version }} 
+litmuschaos.io/version: {{ .Chart.AppVersion }}
+{{- if .Values.customLabels }}
+{{ toYaml .Values.customLabels }}
+{{- end }}
+{{- end }}
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3

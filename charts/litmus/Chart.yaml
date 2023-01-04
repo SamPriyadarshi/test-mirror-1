@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 apiVersion: v1
 appVersion: "1.13.3"
 description: A Helm chart to install litmus infra components on Kubernetes
 name: litmus
 version: 1.13.8
+=======
+apiVersion: v2
+appVersion: "2.14.0"
+description: A Helm chart to install ChaosCenter
+name: litmus
+version: 2.15.3
+kubeVersion: ">=1.16.0-0"
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 home: https://litmuschaos.io
 sources:
   - https://github.com/litmuschaos/litmus
@@ -11,8 +20,24 @@ keywords:
   - resiliency
   - kubernetes
 maintainers:
+<<<<<<< HEAD
   - name: ksatchit
     email: karthik.s@mayadata.io
   - name: chandankumar4
     email: chandan.kumar@zopsmart.com
 icon: https://raw.githubusercontent.com/litmuschaos/icons/master/litmus.png
+=======
+  - name: imrajdas
+    email: raj.das@mayadata.io
+  - name: ispeakc0de
+    email: shubham.chaudhary@mayadata.io
+  - name: jasstkn
+    email: jasssstkn@yahoo.com
+icon: https://raw.githubusercontent.com/litmuschaos/icons/master/litmus.png
+
+dependencies:
+- name: mongodb
+  version: "12.1.11"
+  repository: "https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami"
+  condition: mongodb.enabled
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3

@@ -36,10 +36,17 @@ spec:
             x-kubernetes-preserve-unknown-fields: true
             type: object            
           spec:
+<<<<<<< HEAD
             x-kubernetes-preserve-unknown-fields: true
             type: object
             properties:
               definition:
+=======
+            type: object
+            properties:
+              definition:
+                x-kubernetes-preserve-unknown-fields: true
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
                 type: object
                 properties:
                   args:
@@ -147,6 +154,10 @@ spec:
                           allowEmptyValue: false
                           minLength: 1
                   securityContext:
+<<<<<<< HEAD
+=======
+                    x-kubernetes-preserve-unknown-fields: true
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
                     type: object
                   hostPID:
                     type: boolean
@@ -155,4 +166,8 @@ spec:
     storage: true
     subresources: {}
   conversion:
+<<<<<<< HEAD
     strategy: None
+=======
+    strategy: None
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3

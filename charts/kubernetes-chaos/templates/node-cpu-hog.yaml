@@ -8,9 +8,13 @@ kind: ChaosExperiment
 metadata:
   name: node-cpu-hog
   labels:
+<<<<<<< HEAD
     instance: {{ .Release.Name }}
     chart: {{ include "kubernetes-chaos.chart" . }}
     litmuschaos.io/version: {{ .Chart.AppVersion }}
+=======
+    {{- include "kubernetes-chaos.labels" . | indent 4 }}
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 spec:
   definition:
     scope: Cluster
@@ -61,11 +65,24 @@ spec:
 
     # Enter the number of CPU cores 
     - name: NODE_CPU_CORE
+<<<<<<< HEAD
       value: ''
+=======
+      value: '1'
+
+    - name: CPU_LOAD
+      value: '0'
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 
     # ENTER THE COMMA SEPARATED TARGET NODES NAME
     - name: TARGET_NODES
       value: ''
+<<<<<<< HEAD
+=======
+
+    - name: NODE_LABEL
+      value: ''
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
     
     - name: LIB
       value: 'litmus'

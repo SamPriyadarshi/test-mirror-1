@@ -8,9 +8,13 @@ kind: ChaosExperiment
 metadata:
   name: node-drain
   labels:
+<<<<<<< HEAD
     instance: {{ .Release.Name }}
     chart: {{ include "kubernetes-chaos.chart" . }}
     litmuschaos.io/version: {{ .Chart.AppVersion }}
+=======
+    {{- include "kubernetes-chaos.labels" . | indent 4 }}
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
 spec:
   definition:
     scope: Cluster
@@ -59,6 +63,12 @@ spec:
     - name: TARGET_NODE
       value: ''
 
+<<<<<<< HEAD
+=======
+    - name: NODE_LABEL
+      value: ''
+
+>>>>>>> eb0e859e20aee51bc690b747b1b6dbfd380f19e3
     - name: TOTAL_CHAOS_DURATION
       value: '60'
 
